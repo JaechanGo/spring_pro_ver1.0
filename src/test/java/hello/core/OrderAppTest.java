@@ -13,8 +13,10 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class OrderAppTest {
 
-    MemberService memberService = new MemberServiceImpl();
-    OrderService orderService = new OrderServiceImpl();
+    AppConfig appConfig = new AppConfig();
+    MemberService memberService = appConfig.memberService();
+    OrderService orderService = appConfig.orderService();
+
     MemberRepository memberRepository = new MemoryMemberRepository();
     DiscountPolicy discountPolicy = new FixDiscountPolicy();
     
